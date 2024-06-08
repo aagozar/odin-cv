@@ -1,36 +1,47 @@
 function CurriculumPreview({ cvData }) {
 	return (
 		<div>
-			<h1>Curriculum Preview</h1>
-			<h2>General Info</h2>
-			<p>{cvData.generalInfo.fullName}</p>
-			<p>{cvData.generalInfo.email}</p>
-			<p>{cvData.generalInfo.phone}</p>
+			<h1 className="text-xl font-bold">Curriculum Preview</h1>
 
-			<h2>Practical Experience</h2>
-			<ul>
-				{cvData.practicalExperience.map((experience, index) => (
-					<li key={index}>
-						<h3>{experience.companyName}</h3>
-						<p>{experience.positionTitle}</p>
-						<p>{experience.responsibilities}</p>
-						<p>
-							{experience.startWork} - {experience.endDate}
-						</p>
-					</li>
-				))}
-			</ul>
+			<div className="border aspect-9/16 p-5">
+				<p className="text-5xl font-bold">
+					{cvData.generalInfo.fullName}
+				</p>
+				<p>{cvData.generalInfo.email}</p>
+				<p>{cvData.generalInfo.phone}</p>
 
-			<h2>Educational Experience</h2>
-			<ul>
-				{cvData.educationalExperience.map((experience, index) => (
-					<li key={index}>
-						<h3>{experience.schoolName}</h3>
-						<p>{experience.titleStudy}</p>
-						<p>{experience.dateStudy}</p>
-					</li>
-				))}
-			</ul>
+				<h2 className="font-bold mt-10">Practical Experience</h2>
+				<ul className="list-disc">
+					{cvData.practicalExperience.map((experience, index) => (
+						<li key={index} className="mb-5">
+							<h3 className="text-3xl font-bold">
+								{experience.companyName} &nbsp; - &nbsp;
+								{experience.positionTitle}
+							</h3>
+							<p className="text-xs">
+								{experience.startWork} - {experience.endDate}
+							</p>
+							<p className="text-wrap">
+								{experience.responsibilities}
+							</p>
+						</li>
+					))}
+				</ul>
+
+				<h2 className="font-bold mt-10">Educational Experience</h2>
+				<ul className="list-disc">
+					{cvData.educationalExperience.map((experience, index) => (
+						<li key={index} className="mb-5">
+							<h3 className="text-3xl font-bold">
+								{experience.schoolName} &nbsp; - &nbsp;
+								{experience.titleStudy}
+							</h3>
+							<p>{experience.dateStudy}</p>
+							<p></p>
+						</li>
+					))}
+				</ul>
+			</div>
 		</div>
 	);
 }

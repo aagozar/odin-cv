@@ -11,7 +11,7 @@ function GeneralInfo({ onDataChange }) {
 
 	return (
 		<div>
-			<h1>General Info</h1>
+			<h1 className="text-xl font-bold">General Info</h1>
 
 			<form onSubmit={handleSubmit}>
 				<input
@@ -19,20 +19,31 @@ function GeneralInfo({ onDataChange }) {
 					name="fullName"
 					id="fullName"
 					placeholder="Fullname"
-				/>
+					className="input input-bordered m-1 w-auto"
+					required
+				/>{" "}
+				<br />
 				<input
 					type="email"
 					name="email"
 					id="email"
 					placeholder="email@example.com"
-				/>
+					className="input input-bordered m-1"
+					required
+				/>{" "}
+				<br />
 				<input
 					type="tel"
 					name="phone"
 					id="phone"
 					placeholder="+39 123 456 7890"
-				/>
-				<button type="submit">Confirm</button>
+					className="input input-bordered m-1"
+					required
+				/>{" "}
+				<br />
+				<button type="submit" className="btn m-1">
+					Confirm
+				</button>
 			</form>
 		</div>
 	);

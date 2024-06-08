@@ -51,7 +51,8 @@ function App() {
 				{
 					companyName: "Example Inc.",
 					positionTitle: "Software Developer",
-					responsibilities: "Developing software",
+					responsibilities:
+						"Developing software applications. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt aliquam.",
 					startWork: "2020-01-01",
 					endDate: "2021-01-01",
 				},
@@ -68,17 +69,24 @@ function App() {
 
 	return (
 		<>
-			<h1>Odin CV</h1>
-			<button onClick={loadExampleData}>Generate Sample Data</button>
-			<GeneralInfo onDataChange={handleGeneralInfoChange} />
-			<PracticalExperience
-				onDataChange={handlePracticalExperienceChange}
-			/>
-			<EducationalExperience
-				onDataChange={handleEducationalExperienceChange}
-			/>
-
-			<CurriculumPreview cvData={cvData} />
+			<div id="main" className="flex">
+				<div>
+					<h1 className="text-5xl font-bold">Odin CV</h1>
+					<button onClick={loadExampleData} className="btn m-1">
+						Generate Sample Data
+					</button>
+					<GeneralInfo onDataChange={handleGeneralInfoChange} />
+					<PracticalExperience
+						onDataChange={handlePracticalExperienceChange}
+					/>
+					<EducationalExperience
+						onDataChange={handleEducationalExperienceChange}
+					/>
+				</div>
+				<div>
+					<CurriculumPreview cvData={cvData} className=" w-1/3" />
+				</div>
+			</div>
 		</>
 	);
 }
