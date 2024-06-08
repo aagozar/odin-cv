@@ -40,9 +40,36 @@ function App() {
 		}));
 	}
 
+	function loadExampleData() {
+		setCvData({
+			generalInfo: {
+				fullName: "John Doe",
+				email: "johndoe@example.com",
+				phone: "+39 123 456 7890",
+			},
+			practicalExperience: [
+				{
+					companyName: "Example Inc.",
+					positionTitle: "Software Developer",
+					responsibilities: "Developing software",
+					startWork: "2020-01-01",
+					endDate: "2021-01-01",
+				},
+			],
+			educationalExperience: [
+				{
+					schoolName: "Example University",
+					titleStudy: "Computer Science",
+					dateStudy: "2016-01-01",
+				},
+			],
+		});
+	}
+
 	return (
 		<>
 			<h1>Odin CV</h1>
+			<button onClick={loadExampleData}>Generate Sample Data</button>
 			<GeneralInfo onDataChange={handleGeneralInfoChange} />
 			<PracticalExperience
 				onDataChange={handlePracticalExperienceChange}
