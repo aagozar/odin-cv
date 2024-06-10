@@ -10,16 +10,19 @@ function GeneralInfo({ onDataChange }) {
 	}
 
 	return (
-		<div>
-			<h1 className="text-xl font-bold">General Info</h1>
+		<div className="w-screen m-10">
+			<h1 className="text-3xl font-bold text-center">General Info</h1>
 
-			<form onSubmit={handleSubmit}>
+			<form
+				onSubmit={handleSubmit}
+				className="flex flex-col items-center align-middle"
+			>
 				<input
 					type="text"
 					name="fullName"
 					id="fullName"
-					placeholder="Fullname"
-					className="input input-bordered m-1 w-auto"
+					placeholder="Your Name"
+					className="input input-bordered m-1 w-full max-w-sm"
 					required
 				/>{" "}
 				<br />
@@ -28,7 +31,7 @@ function GeneralInfo({ onDataChange }) {
 					name="email"
 					id="email"
 					placeholder="email@example.com"
-					className="input input-bordered m-1"
+					className="input input-bordered m-1 w-full max-w-sm"
 					required
 				/>{" "}
 				<br />
@@ -37,11 +40,11 @@ function GeneralInfo({ onDataChange }) {
 					name="phone"
 					id="phone"
 					placeholder="+39 123 456 7890"
-					className="input input-bordered m-1"
+					className="input input-bordered m-1 w-full max-w-sm"
 					required
 				/>{" "}
 				<br />
-				<button type="submit" className="btn m-1">
+				<button type="submit" className="btn btn-wide">
 					Confirm
 				</button>
 			</form>

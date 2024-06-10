@@ -3,7 +3,7 @@ function CurriculumPreview({ cvData }) {
 		<div>
 			<h1 className="text-xl font-bold">Curriculum Preview</h1>
 
-			<div className="border p-5 w-2/4 aspect-9/16">
+			<div className="border p-5">
 				<p className="text-5xl font-bold">
 					{cvData.generalInfo.fullName}
 				</p>

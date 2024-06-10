@@ -108,26 +108,22 @@ function App() {
 
 	return (
 		<>
-			<div
-				id="main"
-				className="w-screen h-screen flex justify-center my-10"
-			>
-				<div className="w-2/4">
+			<div id="main" className="flex flex-col items-center">
+				<div className="w-screen h-screen flex flex-col items-center justify-center">
 					<h1 className="text-5xl font-bold">Odin CV</h1>
 					<button onClick={loadExampleData} className="btn m-1">
 						Generate Sample Data
 					</button>
-					<GeneralInfo onDataChange={handleGeneralInfoChange} />
-					<PracticalExperience
-						onDataChange={handlePracticalExperienceChange}
-					/>
-					<EducationalExperience
-						onDataChange={handleEducationalExperienceChange}
-					/>
 				</div>
-				<div ref={cvPreviewRef}>
-					<CurriculumPreview cvData={cvData} id="cvPreview" />
-				</div>
+
+				<GeneralInfo onDataChange={handleGeneralInfoChange} />
+				<PracticalExperience
+					onDataChange={handlePracticalExperienceChange}
+				/>
+				<EducationalExperience
+					onDataChange={handleEducationalExperienceChange}
+				/>
+				<CurriculumPreview cvData={cvData} id="cvPreview" />
 				<button onClick={generatePDF}>Download</button>
 			</div>
 		</>
